@@ -86,6 +86,7 @@
 /* Mobile Styles */
 @media (max-width: 952px) {
   .nav-bar strong {
+    height: 0;
     visibility: hidden;
   }
 
