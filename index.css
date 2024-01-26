@@ -86,8 +86,14 @@
 /* Mobile Styles */
 @media (max-width: 952px) {
   .nav-bar strong {
-    height: 0;
-    visibility: hidden;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    padding: 0;
+    /* margin: -1px; */
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
   }
 
   .appIcon-img {
