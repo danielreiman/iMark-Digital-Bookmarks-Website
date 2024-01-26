@@ -110,6 +110,11 @@
     padding: 20px;
   }
 
+  .features-div {
+    display: flex;
+    justify-content: center;
+  }
+
   .features-div p {
     font-size: 16px;
     width: 90%; 
