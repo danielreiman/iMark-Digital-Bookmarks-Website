@@ -3,6 +3,10 @@ body {
   margin: 0px 0;
 }
 
+img {
+  pointer-events: none;
+}
+
 /* Nav Bar */
 .nav-bar {
   display: flex;
