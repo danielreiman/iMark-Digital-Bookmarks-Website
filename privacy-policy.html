@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - iMark Digital Bookmarks</title>
+    <style>
+        :root {
+            --primary-color: #ff5722;
+            --secondary-color: #ff8a65;
+            --background-color: #ffffff;
+            --text-color: #333333;
+            --card-bg: #f5f5f5;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #1a0d00;
+                --text-color: #ffffff;
+                --card-bg: #2a1500;
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: rgba(var(--background-color-rgb), 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 30px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: black;
+        }
+        .privacy-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        .privacy-content {
+            padding: 60px 0;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .date {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+        .policy-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        .policy-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .policy-card {
+                padding: 30px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="./" class="logo">iMark</a>
+                <ul>
+                    <li><a href="./">Home</a></li>
+                    <li><a href="./#features">Features</a></li>
+                    <li><a href="./#download">Install</a></li>
+                    <li><a href="privacy-policy">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="privacy-hero">
+            <div class="container">
+                <h1>Privacy Policy</h1>
+                <p class="date">Last updated: August 28th, 2022</p>
+            </div>
+        </section>
+
+        <section class="privacy-content">
+            <div class="container">
+                <div class="policy-card">
+                    <h2>Data Collection and Storage</h2>
+                    <p>iMark does not collect or send any user data to any servers other than Apple's iCloud. We do not collect any data using third party servers or intermediaries of any kind.</p>
+                    <p>iMark collects data and stores it on Apple iCloud. We use iCloud to save your bookmarks data across your devices.</p>
+                </div>
+
+                <div class="policy-card">
+                    <h2>Contact Us</h2>
+                    <p>If you have any questions in regards to our Privacy Policy, do not hesitate to contact us at <a href="mailto:admin@imark.app">admin@imark.app</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2024</span> iMark Digital Bookmarks. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

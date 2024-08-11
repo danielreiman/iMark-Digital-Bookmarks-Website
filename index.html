@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="shared.css">
-
     <link rel="icon" href="./Assets/favicon.png">
     <link rel="shortcut icon" type="image/x-icon" href="./Assets/favicon.png">
     <!-- <link rel="apple-touch-icon" href="./Assets/appicon.png"> -->
@@ -13,73 +10,385 @@
     <link rel="apple-touch-icon" sizes="152x152" href="./Assets/Apple-touch-icon/Apple-touch-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="120x120" href="./Assets/Apple-touch-icon/Apple-touch-icon-120x120.png">
     <meta name="apple-itunes-app" content="app-id=1639049669, app-argument=https://apps.apple.com/us/app/imark-digital-bookmarks/id1639049669?itsct=apps_box_link&itscg=30200">
-    <title>iMark Digital Bookmarks</title>
-  </head>
+    <title>iMark - Revolutionize Your Digital Bookmarking</title>
+    <style>
+        :root {
+            --primary-color: #ff5722;
+            --secondary-color: #ff8a65;
+            --background-color: #ffffff;
+            --text-color: #333333;
+            --card-bg: #f5f5f5;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #1a0d00;
+                --text-color: #ffffff;
+                --card-bg: #2a1500;
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: var(--background-color);
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color:  var(--text-color);
+            text-decoration: none;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 30px;
+        }
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        .hero {
+            padding: 150px 0 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+        .hero-content {
+            flex: 1;
+            padding-right: 50px;
+        }
 
-  <body>
-      <div class="top-div">
-        <nav class="nav-bar">
-          <strong>iMark Digital Bookmarks</strong>
-          <div class="nav-bar-btn">
-              <a href="./">Home</a>
-            
-              <a href="./privacypolicy">Privacy Policy</a>
-          </div>
-        </nav>
-  
-        <div class="main-title-container">
-          <img src="Assets/appicon.png" class="appIcon-img" alt="Orange gradient book icon on a dark background.">
-  
-          <h1>iMark Digital Bookmarks</h1>
-          <h3>Bookmarks Simplified</h3>
-  
-          <a href="https://apple.co/3UWvkAI" target="_blank">
-            <img src="./Assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store">
-          </a>
+        .hero-content img {
+            width: 170px;
+            height: auto;
+            border-radius: 45px;
+
+            padding-bottom: 15px;
+        }
+        .tag {
+            display: inline-block;
+            background-color: rgba(255, 87, 34, 0.2);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.8;
+        }
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+        .cta-button .arrow {
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+        .hero-graphics {
+            flex: 0 0 40%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 300px;
+            margin-left: auto;
+        }
+        .graphic-item {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .graphic-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .main-graphic {
+            grid-column: span 2;
+            grid-row: span 2;
+            font-size: 3rem;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .features {
+            padding: 100px 0;
+            background-color: var(--card-bg);
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background-color: var(--background-color);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        #preview {
+            padding: 100px 0;
+        }
+        .preview-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex: 1;
+        }
+        .preview-image {
+            flex: 1;
+        }
+        .preview-image img {
+            max-width: 100%;
+            border-radius: 20px;
+        }
+        #download {
+            padding: 100px 0;
+            text-align: center;
+            background-color: var(--card-bg);
+        }
+        footer {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            padding: 50px 0;
+            text-align: center;
+        }
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+            .hero-graphics {
+                width: 100%;
+                margin-left: 0;
+            }
+            h1, h2 {
+                font-size: 2.5rem;
+            }
+            .preview-content {
+                flex-direction: column;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">iMark</a>
+                <ul>
+                    <li><a href="./">Home</a></li>
+                    <li><a href="./#features">Features</a></li>
+                    <li><a href="./#download">Install</a></li>
+                    <li><a href="privacy-policy">Privacy Policy</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
+    </header>
 
-      <div class="features-div">
-        <div>
-          <h1>Key Features</h1>
-          <p>Our App offers a range of features to help you get the most out of your experience. Our user-friendly interface makes it easy to navigate and access all the features. Here are some features of iMark:</p>
-  
-          <div class="features">
-            <div>
-              <h3>Easy and convenient UI</h3>
-              <img src="./Assets/Screenshots/Screenshot-01.png" alt="Screenshot 01">
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div>
+                        <img src="https://imark.app/Assets/appicon.png" alt="iMark logo">
+                    </div>
+                    <span class="tag">Bookmarks Simplified</span>
+                    <h1>iMark Digital Bookmarks</h1>
+                    <p class="subtitle">iMark brings organization and seamless syncing to your digital bookmarks.</p>
+                    <a href="#download" class="cta-button">Get started <span class="arrow">→</span></a>
+                </div>
             </div>
-  
-            <div>
-              <h3>See the books you have completed to read</h3>
-              <img src="./Assets/Screenshots/Screenshot-02.png" alt="Screenshot 02">
-  
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-bookmark"></i></div>
+                        <h3>Unified Bookmarking</h3>
+                        <p>Manage all your digital bookmarks in one place across all devices.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Progress Tracking</h3>
+                        <p>Effortlessly track your reading progress across all your books.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-star"></i></div>
+                        <h3>Favorite Books</h3>
+                        <p>Highlight and easily access your most favorite books.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                        <h3>Completed Books</h3>
+                        <p>See an overview of all the books you've finished.</p>
+                    </div>
+                </div>
             </div>
-  
-            <div>
-              <h3>Share your bookmark with others</h3>
-              <img src="./Assets/Screenshots/Screenshot-03.png" alt="Screenshot 03">
+        </section>
+
+        <section id="download">
+            <div class="container">
+                <h2>Start Your iMark Journey</h2>
+                <p class="subtitle">Install now and you’ll never need a physical bookmark again.</p>
+                <a href="https://apple.co/3UWvkAI" class="cta-button">Install via App Store <span class="arrow">→</span></a>
             </div>
-  
-            <div>
-              <h3>Experience Our App in Stylish Dark mode</h3>
-              <img src="./Assets/Screenshots/Screenshot-04.png" alt="Screenshot 04">
-            </div>
-          </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year">2024</span> iMark Digital Bookmarks. All rights reserved.</p>
         </div>
-      </div>
+    </footer>
 
-      <div class="performance-div">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
 
-        <img src="./Assets/Screenshots/Screenshots-Group-01.png" alt="iMark's Launch Screenshots">
-        <h2>Get the best performance <hr> Organizing your bookmarks</h2>
-      </div>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+        // gsap.from(".hero-content > *", {
+        //    y: 50,
+        //    opacity: 0,
+        //  duration: 1,
+        //  stagger: 0.2,
+        //  ease: "power3.out"
+        // });
 
-      <script src="./script.js"></script>
-  </body>
+        gsap.from(".hero-graphics .graphic-item", {
+            scale: 0.5,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "back.out(1.7)"
+        });
 
-  <footer>
-    <p>&copy; <span id="year"></span> iMark digital bookmarks. All Rights Reserved.</p>
-    <p>| App and Website developed by Daniel Reiman |</p>
-  </footer>
+        gsap.utils.toArray('.feature-card').forEach(card => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+        });
+
+        gsap.from(".preview-content > *", {
+            scrollTrigger: {
+                trigger: "#preview",
+                start: "top 60%"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.3,
+            ease: "power3.out"
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
 </html>
